@@ -36,7 +36,6 @@ const convercao = {
         },
         kelvin: function(valor){
           return (valor + 459.67) * 5/9
-
         },
         fahrenheit: function(valor){
           return valor

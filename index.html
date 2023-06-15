@@ -13,13 +13,19 @@
       <input type="number" id="valor" />
 
       <label for="categorias">Selecione uma categoria:</label>
-      <select id="categorias" onchange="atualizarUnidades()"></select>
+      <select id="categorias" onchange="atualizarUnidades()">
+        <option>--selecione</option>
+      </select>
 
       <label for="origem">Unidade de origem:</label>
-      <select id="origem"></select>
+      <select id="origem">
+        <option>--selecione</option>
+      </select>
 
       <label for="destino">Unidade de destino:</label>
-      <select id="destino"></select>
+      <select id="destino">
+        <option>--selecione</option>
+      </select>
 
       <button>Converter</button>
     </form>
