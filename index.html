@@ -5,42 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conversor de Unidade</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
   </head>
   <body>
     <h1>Conversor de Unidades</h1>
-    <form action="">
-      <fieldset>
-        <label for="number"></label>
-        <input type="number" id="number" />
-      </fieldset>
-      <fieldset>
-        <select name="select" id="selectMedida" onchange="mostrarDivs()">
-          <option value="comprimento" id="comprimento">COMPRIMENTO</option>
-          <option value="peso" id="peso">PESO</option>
-          <option value="temperatura" id="temperatura">TEMPERATURA</option>
-        </select>
-      </fieldset>
-      <fieldset>
-        <select name="select">
-          <optgroup class="grupoComprimento medida" id="comprimento">
-            <option value="metros" id="Metros">Metros</option>
-            <option value="centimetros" id="centimetros">Centimetros</option>
-            <option value="polegadas" id="polegadas">Polegadas</option>
-          </optgroup>
-          <optgroup class="grupoPeso medida" id="peso">
-            <option value="quilograma" id="quilograma">Quilograma</option>
-            <option value="grama" id="grama">Grama</option>
-            <option value="libras" id="libras">Libras</option>
-          </optgroup>
-          <optgroup class="grupoTemperatura medida" id="temperatura">
-            <option value="celsius" id="celsius">Celsius</option>
-            <option value="fahrenheit" id="fahrenheit">Fahrenheit</option>
-            <option value="kelvin" id="kelvin">Kelvin</option>
-          </optgroup>
-        </select>
-      </fieldset>
+    <form onsubmit="return converter()">
+      <label for="valor">Valor a ser convertido:</label>
+      <input type="number" id="valor" />
+
+      <label for="categorias">Selecione uma categoria:</label>
+      <select id="categorias" onchange="atualizarUnidades()"></select>
+
+      <label for="origem">Unidade de origem:</label>
+      <select id="origem"></select>
+
+      <label for="destino">Unidade de destino:</label>
+      <select id="destino"></select>
+
       <button>Converter</button>
     </form>
+    <script src="script.js"></script>
   </body>
 </html>
