@@ -1,10 +1,8 @@
-
-
 const convercao = {
   categorias: ['comprimento', 'peso', 'temperatura' ],
   unidades: {
     comprimento: ['metros', 'centimetros', 'polegadas' ],
-    peso: ['quilogramas', 'gramas', 'libras'],
+    peso: ['quilograma', 'gramas', 'libras'],
     temperatura: ['celsius', 'fahrenheit', 'kelvin'],
   },
   fatores: {
@@ -43,7 +41,7 @@ const convercao = {
       },
       kelvin:{
         celsius: function(valor){
-          return valor - 273.15
+          return valor - 273.15 
         },
         kelvin: function(valor){
           return valor
@@ -66,55 +64,87 @@ for (let i = 0; i < convercao.categorias.length; i++) {
   categorias.appendChild(option)
 }
 
-function atualizarUnidades(){
+var selecione = document.getElementById('selecione')
+selecione.setAttribute("disabled", "true");
+
+function atualizarOrigem(){
   var categoria = document.getElementById('categorias').value
   var unidades = convercao.unidades[categoria]
   var origem = document.getElementById('origem')
-  var destino = document.getElementById('destino')
   origem.innerHTML = '' 
-  destino.innerHTML = ''
+  
+  var option = document.createElement('option')
+  option.textContent = "--selecione"
+  option.setAttribute("disabled", "true")
+  option.setAttribute("selected", "true")
+  origem.appendChild(option)
 
   for (let i = 0; i < unidades.length; i++) {
     var option = document.createElement('option')
     option.textContent = unidades[i] 
     origem.appendChild(option)
-
-    option = document.createElement('option')
-    option.textContent = unidades[i] 
-    destino.appendChild(option)
   }
 }
+
+function atualizarDestino(){
+  var categoria = document.getElementById('categorias').value
+  var unidades = convercao.unidades[categoria]
+  var destino = document.getElementById('destino')
+  destino.innerHTML = ''
+
+  for (let i = 0; i < unidades.length; i++){
+    if(unidades[i] != document.getElementById('origem').value){
+      option = document.createElement('option')
+      option.textContent = unidades[i] 
+      destino.appendChild(option)
+    }
+  }
+}
+
+var resultadoDiv = document.createElement('div');
+var body = document.querySelector('body');
+body.appendChild(resultadoDiv);
 
 function converter(){
   var origem = document.getElementById('origem').value
   var destino = document.getElementById('destino').value
-  var valor = document.getElementById('valor').value
+  var valor = parseInt(document.getElementById('valor').value)
   var categoria = document.getElementById('categorias').value
-
   var resultado 
 
-  switch (categoria) {
-    case 'comprimento':
-
-      var valorEmMetros = valor / convercao.fatores.comprimento[origem]
-      resultado = valorEmMetros * convercao.fatores.comprimento[destino]
-      
-      break;
-
-    case 'peso':
-
-      var valorEmGramas = valor / convercao.fatores.comprimento[origem]
-      resultado = valorEmGramas * convercao.fatores.comprimento[destino]
-        
-      break;
-
-    case 'temperatura':
-      resultado = convercao.fatores.temperatura[origem][destino](valor)
-      break;
+  if(categoria != '--selecione' && origem != '--selecione' && destino != '--selecione'){
+    switch (categoria) {
+      case 'comprimento':
   
+        var valorEmMetros = valor / convercao.fatores.comprimento[origem]
+        resultado = valorEmMetros * convercao.fatores.comprimento[destino]
+  
+        break
+  
+      case 'peso':
+  
+        var valorEmGramas = valor / convercao.fatores.peso[origem]
+        resultado = valorEmGramas * convercao.fatores.peso[destino]
+          
+        break
+  
+      case 'temperatura':
+        resultado = convercao.fatores.temperatura[origem][destino](valor)
+        if(destino == 'celsius'){
+          resultado = `${resultado.toFixed(1)}°C`
+        } else if(destino == 'fahrenheit'){
+          resultado = `${resultado.toFixed(1)}°F`
+        } else if(destino == 'kelvin'){
+          resultado = `${resultado.toFixed(1)}°k`
+        }
+        break
+    
+    }
+  
+    resultadoDiv.textContent = `Resultado: ${resultado}`;
+  } else {
+    alert("selecione todos os campos")
   }
-
-  alert(resultado)
 
   return false
 }

@@ -10,15 +10,15 @@
     <h1>Conversor de Unidades</h1>
     <form onsubmit="return converter()">
       <label for="valor">Valor a ser convertido:</label>
-      <input type="number" id="valor" />
+      <input type="number" id="valor" required />
 
       <label for="categorias">Selecione uma categoria:</label>
-      <select id="categorias" onchange="atualizarUnidades()">
-        <option>--selecione</option>
+      <select id="categorias" onchange="atualizarOrigem()">
+        <option id="selecione" disabled selected>--selecione</option>
       </select>
 
       <label for="origem">Unidade de origem:</label>
-      <select id="origem">
+      <select id="origem" onchange="atualizarDestino()">
         <option>--selecione</option>
       </select>
 
