@@ -101,9 +101,7 @@ function atualizarDestino(){
   }
 }
 
-var resultadoDiv = document.createElement('div');
-var body = document.querySelector('body');
-body.appendChild(resultadoDiv);
+var resultadoConversao = document.getElementById('resultadoConversao');
 
 function converter(){
   var origem = document.getElementById('origem').value
@@ -141,7 +139,7 @@ function converter(){
     
     }
   
-    resultadoDiv.textContent = `Resultado: ${resultado}`;
+    resultadoConversao.textContent = `${resultado}`;
   } else {
     alert("selecione todos os campos")
   }
