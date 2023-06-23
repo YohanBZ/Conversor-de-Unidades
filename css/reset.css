@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+  --base:#202124;
+  --primaria:#eeeeee;
+  --secundaria:#c6d9bd;
+}
+
+body {
+  background: var(--base);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primaria);
+}

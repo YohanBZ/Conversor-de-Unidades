@@ -1,0 +1,6 @@
+@import './reset.css';
+
+form{
+  border: 1px solid var(--primaria);
+  padding: 50px;
+}
