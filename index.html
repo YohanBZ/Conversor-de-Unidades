@@ -3,40 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="./img/logo.svg"
+      width="32"
+      height="32"
+      type="image/x-icon"
+    />
     <title>Conversor de Unidade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
+
   <body>
-    <h1 class="tituloPrincipal">Conversor de Unidades</h1>
+    <header>
+      <h1 class="tituloPrincipal">Conversor de Unidades</h1>
+      <img
+        src="./img/logo.svg"
+        alt="Simbolo de mais, um de termometro, um de balança e compasso"
+      />
+    </header>
 
-    <form class="formulario" onsubmit="return converter()">
-      <label for="categorias">Selecione uma categoria:</label>
-      <select id="categorias" onchange="atualizarOrigem()">
-        <option id="selecione" disabled selected>--selecione</option>
-      </select>
+    <main>
+      <form class="formulario" onsubmit="return converter()">
+        <label for="categorias">Selecione uma categoria:</label>
+        <select id="categorias" onchange="atualizarOrigem()">
+          <option id="selecione" disabled selected>--selecione</option>
+        </select>
 
-      <fieldset>
-        <div class="origem">
-          <label for="valor">Valor a ser convertido:</label>
-          <input class="valorInicial" type="number" id="valor" required />
+        <fieldset>
+          <div class="origem">
+            <label for="origem">Unidade de origem:</label>
+            <select id="origem" onchange="atualizarDestino()">
+              <option>--selecione</option>
+            </select>
+            <label for="valor">Valor a ser convertido:</label>
+            <input class="valorInicial" type="number" id="valor" required />
+          </div>
 
-          <label for="origem">Unidade de origem:</label>
-          <select id="origem" onchange="atualizarDestino()">
-            <option>--selecione</option>
-          </select>
-        </div>
+          <div>
+            <p class="sinalDeIgual">=</p>
+          </div>
 
-        <div class="destino">
-          <label for="resultadoConversao">Valor convertido:</label>
-          <div id="resultadoConversao"></div>
-          <label for="destino">Unidade de destino:</label>
-          <select id="destino">
-            <option>--selecione</option>
-          </select>
-        </div>
-      </fieldset>
-      <button>Converter</button>
-    </form>
+          <div class="destino">
+            <label for="destino">Unidade de destino:</label>
+            <select id="destino">
+              <option>--selecione</option>
+            </select>
+            <label for="resultadoConversao">Valor convertido:</label>
+            <textarea type="text" id="resultadoConversao" disabled></textarea>
+          </div>
+        </fieldset>
+        <button class="botao">Converter</button>
+      </form>
+    </main>
+
+    <footer>
+      <p>Projeto realizado por Yohan Barboza.</p>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

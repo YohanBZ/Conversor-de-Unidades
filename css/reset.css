@@ -7,13 +7,15 @@
 
 :root {
   --base:#202124;
-  --primaria:#eeeeee;
-  --secundaria:#c6d9bd;
+  --primaria:#e3e2e2;
+  --secundaria: #303134;
+  --terciaria: #3c4043;
 }
 
 body {
   background: var(--base);
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;

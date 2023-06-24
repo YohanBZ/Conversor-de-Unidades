@@ -1,58 +1,154 @@
 @import './reset.css';
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+header{
+  display: flex;
+  margin: 10px;
+}
+
+fieldset{
+  display: flex;
+  align-items:end;
+  border: none;
+  max-width: 300px;
+  height: 180px;
+  padding: 10px;
+  margin: 5px;
+}
+
+select{
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+footer{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  padding: 10px;
+  font-size: x-small;
+}
 
 .tituloPrincipal{
-  margin: 30px;
-  padding: 20px;
+  margin: 20px;
   font-size: xx-large;
   font-family: 'Righteous', cursive;
 }
 
 .formulario{
   max-width: 600px;
-  margin: 10px;
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--primaria);
-  padding: 50px;
+  border-radius: 6px;
+  padding: 40px;
+  gap: 5px;
+  box-shadow: 10px 10px 35px 0 rgb(22, 22, 22, 83%),
+  -1px -1px 4px 0  rgba(129, 129, 129, 0.5), 
+  inset -1px -1px 4px 0 rgba(255,255,255,.2),
+  inset 1px 1px 4px 0 rgba(0, 0, 0, .4);
+  border-top: 1px solid rgba(255, 255, 255, 0.274);
+  border-left: 1px solid rgba(255, 255, 255, 0.267);
+}
+
+#categorias{
+  height: 32px;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 5px 16px 5px 5px;
+  vertical-align: middle;
+  color: var(--primaria);
+  background-color: var(--secundaria);
 }
 
 .origem, .destino{
   display: flex;
   flex-direction: column;
   padding: 10px;
+  gap: 5px;
 }
 
 #origem, #destino{
   height: 32px;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 20px;
   padding: 5px 16px 5px 5px;
   vertical-align: middle;
-  color: aliceblue;
-  background-color:  #303134;
+  color: var(--primaria);
+  background-color: var(--secundaria);
+  margin-bottom: 20px;
 }
 
-.valorInicial, #resultadoConversao{
-  background: white;
+.valorInicial{
   width: 200px;
   height: 40px;
-  border: none;
+  background-color: #202124;
+  border: 1px solid var(--terciaria);
+  border-radius: 2px 2px 0 0;
+  color: var(--primaria);
+  font-size: 180%;
+  padding: 1px 6px;
+  text-align: center;
 }
 
-#categorias{
-  height: 32px;
-  font-size: 13px;
-  line-height: 20px;
-  padding: 5px 16px 5px 5px;
-  vertical-align: middle;
-  color: aliceblue;
-  background-color:  #303134;
+#resultadoConversao{
+  width: 200px;
+  height: 40px;
+  background-color: #202124;
+  border: 1px solid var(--terciaria);
+  border-radius: 2px 2px 0 0;
+  color: var(--primaria);
+  font-size: 180%;
+  padding: 2px 6px;
+  text-align: center;
+  resize: none;
 }
 
-fieldset{
-  display: flex;
-  border: none;
-  max-width: 300px;
-  height: 150px;
+.sinalDeIgual{
+  margin-bottom: 10px;
+  font-size: xx-large;
+}
+
+.botao{
+  height: 40px;
+  color: var(--primaria);
+  border-radius: 6px;
+  margin: 10px;
+  font-family: 'Righteous', cursive;
+  font-size: large;
+  background: transparent;
+  background: var(--terciaria);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow:inset 1px 1px 4px 0px rgba(255,255,255,.5),
+  7px 7px 20px 0px rgba(0,0,0,.1),
+  4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+
+.botao:hover {
+  color: #b7b7b7;
+  background-color: var(--secundaria);
+  box-shadow:  1px 1px 4px 0 rgba(129, 129, 129, 0.5),
+    -1px -1px 4px 0  rgba(129, 129, 129, 0.5), 
+    inset -1px -1px 4px 0 rgba(255,255,255,.2),
+    inset 1px 1px 4px 0 rgba(0, 0, 0, .4);
+}
+
+
+@media screen and (max-width: 598px ){
+  .tituloPrincipal{
+    margin: 15px;
+    font-size: x-large;
+  }
+  .formulario{
+    max-width: 450px;
+  }
+
+  fieldset{
+    flex-direction: column;
+    align-items: center;
+    height: 380px;
+    text-align: center;
+  }
 }

@@ -71,6 +71,8 @@ function atualizarOrigem(){
   var categoria = document.getElementById('categorias').value
   var unidades = convercao.unidades[categoria]
   var origem = document.getElementById('origem')
+  var destino = document.getElementById('destino')
+  destino.innerHTML = '<option>--selecione</option>'
   origem.innerHTML = '' 
   
   var option = document.createElement('option')
@@ -104,13 +106,14 @@ function atualizarDestino(){
 var resultadoConversao = document.getElementById('resultadoConversao');
 
 function converter(){
+  var categoria = document.getElementById('categorias').value
   var origem = document.getElementById('origem').value
   var destino = document.getElementById('destino').value
   var valor = parseInt(document.getElementById('valor').value)
-  var categoria = document.getElementById('categorias').value
   var resultado 
 
   if(categoria != '--selecione' && origem != '--selecione' && destino != '--selecione'){
+
     switch (categoria) {
       case 'comprimento':
   
@@ -139,9 +142,9 @@ function converter(){
     
     }
   
-    resultadoConversao.textContent = `${resultado}`;
+    resultadoConversao.value = `${resultado}`;
   } else {
-    alert("selecione todos os campos")
+    alert("selecione todos os campos!!!")
   }
 
   return false
