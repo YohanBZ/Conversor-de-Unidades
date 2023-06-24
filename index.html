@@ -30,16 +30,16 @@
     </header>
 
     <main>
-      <form class="formulario" onsubmit="return converter()">
+      <form class="formulario">
         <label for="categorias">Selecione uma categoria:</label>
-        <select id="categorias" onchange="atualizarOrigem()">
+        <select id="categorias">
           <option id="selecione" disabled selected>--selecione</option>
         </select>
 
         <fieldset>
           <div class="origem">
             <label for="origem">Unidade de origem:</label>
-            <select id="origem" onchange="atualizarDestino()">
+            <select id="origem">
               <option>--selecione</option>
             </select>
             <label for="valor">Valor a ser convertido:</label>
@@ -59,7 +59,7 @@
             <textarea type="text" id="resultadoConversao" disabled></textarea>
           </div>
         </fieldset>
-        <button class="botao">Converter</button>
+        <button class="botao" id="botao">Converter</button>
       </form>
     </main>
 

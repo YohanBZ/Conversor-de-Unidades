@@ -54,18 +54,19 @@ const convercao = {
   }
 }
 
+function atualizarCategorias(){
+  var categorias = document.getElementById('categorias')
 
+  for (let i = 0; i < convercao.categorias.length; i++) {
+    var option = document.createElement('option')
+    option.textContent = convercao.categorias[i] 
+    categorias.appendChild(option)
+  }
 
-var categorias = document.getElementById('categorias')
-
-for (let i = 0; i < convercao.categorias.length; i++) {
-  var option = document.createElement('option')
-  option.textContent = convercao.categorias[i] 
-  categorias.appendChild(option)
+  var selecione = document.getElementById('selecione')
+  selecione.setAttribute("disabled", "true")
 }
 
-var selecione = document.getElementById('selecione')
-selecione.setAttribute("disabled", "true");
 
 function atualizarOrigem(){
   var categoria = document.getElementById('categorias').value
@@ -103,9 +104,8 @@ function atualizarDestino(){
   }
 }
 
-var resultadoConversao = document.getElementById('resultadoConversao');
-
-function converter(){
+function converter(event){
+  event.preventDefault()
   var categoria = document.getElementById('categorias').value
   var origem = document.getElementById('origem').value
   var destino = document.getElementById('destino').value
@@ -142,11 +142,18 @@ function converter(){
     
     }
   
-    resultadoConversao.value = `${resultado}`;
+    var resultadoConversao = document.getElementById('resultadoConversao')
+    resultadoConversao.value = `${resultado}`
   } else {
     alert("selecione todos os campos!!!")
   }
 
-  return false
 }
 
+
+var botao = document.getElementById("botao")
+botao.addEventListener('click', converter)
+categorias.addEventListener('change', atualizarOrigem)
+origem.addEventListener('change', atualizarDestino)
+
+atualizarCategorias()
