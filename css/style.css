@@ -2,36 +2,9 @@
 @import './reset.css';
 
 /* Estilização do cabeçalho */
-header{
+.cabecalho{
   display: flex;
   margin: 10px;
-}
-
-/* Estilização do conjunto de campos relacionados */
-fieldset{
-  display: flex;
-  align-items:end;
-  border: none;
-  max-width: 300px;
-  height: 180px;
-  padding: 10px;
-  margin: 5px;
-}
-
-/* Estilização dos campos de seleção */
-select{
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-/* Estilização do rodapé */
-footer{
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  margin: 20px;
-  padding: 10px;
-  font-size: x-small;
 }
 
 /* Estilização do título principal */
@@ -41,7 +14,7 @@ footer{
   font-family: 'Righteous', cursive;
 }
 
-/* Estilização do formulário */
+/* Estilização do formulário*/
 .formulario{
   max-width: 600px;
   display: flex;
@@ -68,8 +41,19 @@ footer{
   background-color: var(--secundaria);
 }
 
-/* Estilização dos campos de origem e destino */
-.origem, .destino{
+/* Estilização do conjunto de campos relacionados */
+.conjutoDosCampos{
+  display: flex;
+  align-items:end;
+  border: none;
+  max-width: 300px;
+  height: 180px;
+  padding: 10px;
+  margin: 5px;
+}
+
+/* Estilização das div's que faze a separação de origem e destino */
+.secaoOrigem, .secaoDestino{
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -151,6 +135,16 @@ footer{
     inset 1px 1px 4px 0 rgba(0, 0, 0, .4);
 }
 
+/* Estilização do rodapé */
+.rodape{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  padding: 10px;
+  font-size: x-small;
+}
+
 /* Estilização para telas com largura máxima de 598px */
 @media screen and (max-width: 598px ){
   /* Estilização do título principal */
@@ -162,8 +156,9 @@ footer{
   .formulario{
     max-width: 450px;
   }
-/* Estilização do conjunto de campos relacionados */
-  fieldset{
+
+  /* Estilização do conjunto de campos relacionados */
+  .conjutoDosCampos{
     flex-direction: column;
     align-items: center;
     height: 380px;

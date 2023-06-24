@@ -24,3 +24,9 @@ body {
   align-items: center;
   color: var(--primaria);
 }
+
+/* Estilização dos campos de seleção */
+select{
+  border-radius: 4px;
+  cursor: pointer;
+}

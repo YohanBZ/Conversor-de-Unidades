@@ -30,11 +30,11 @@
 
   <body>
     <!-- Header define o cabeçalho da página onde temos o título principal da página exibido no cabeçalho e a imagem/logo exibida -->
-    <header>
+    <header class="cabecalho">
       <h1 class="tituloPrincipal">Conversor de Unidades</h1>
       <img
         src="./img/logo.svg"
-        alt="Simbolo de mais, um de termometro, um de balança e compasso"
+        alt="Simbolo que contem um mais, um de termometro, uma balança e um compasso"
       />
     </header>
 
@@ -49,9 +49,9 @@
           <option id="selecione" disabled selected>--selecione</option>
         </select>
 
-        <fieldset>
+        <fieldset class="conjutoDosCampos">
           <!-- Utilização de div para divisão dos campos relacionados à unidade de origem. -->
-          <div class="origem">
+          <div class="secaoOrigem">
             <!-- Rótulo para o campo de seleção de unidade de origem.  -->
             <label for="origem">Unidade de origem:</label>
             <!-- Campo de seleção da unidade de origem.  -->
@@ -71,7 +71,7 @@
           </div>
 
           <!-- Divisão para os campos relacionados à unidade de destino. -->
-          <div class="destino">
+          <div class="secaoDestino">
             <!-- Rótulo para o campo de seleção de unidade de destino. -->
             <label for="destino">Unidade de destino:</label>
             <!-- Campo de seleção da unidade de destino. -->
@@ -91,7 +91,7 @@
     </main>
 
     <!-- Define o rodapé da página. Parágrafo exibindo a informação do projeto e do autor.  -->
-    <footer>
+    <footer class="rodape">
       <p>Projeto realizado por Yohan Barboza.</p>
     </footer>
 
