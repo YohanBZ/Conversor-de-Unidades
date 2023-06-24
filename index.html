@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Define o ícone da página exibido na guia do navegador. -->
     <link
       rel="shortcut icon"
       href="./img/logo.svg"
@@ -10,17 +12,24 @@
       height="32"
       type="image/x-icon"
     />
-    <title>Conversor de Unidade</title>
+
+    <!-- Define o título da página exibido na guia do navegador. -->
+    <title>Conversor de Unidades</title>
+
+    <!-- Importa a fonte "Righteous" do Google Fonts para uso no documento. -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Righteous&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Importa o arquivo CSS externo "style.css" para estilizar a página. -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <body>
+    <!-- Header define o cabeçalho da página onde temos o título principal da página exibido no cabeçalho e a imagem/logo exibida -->
     <header>
       <h1 class="tituloPrincipal">Conversor de Unidades</h1>
       <img
@@ -29,43 +38,64 @@
       />
     </header>
 
+    <!-- Main contém o conteúdo principal da página onde temos o formulário para a entrada de dados e conversão. -->
     <main>
       <form class="formulario">
+        <!-- Rótulo para o campo de seleção de categorias. -->
         <label for="categorias">Selecione uma categoria:</label>
+
+        <!-- Campo de seleção de categorias. Opção inicial desabilitada e selecionada por padrão, para a seleção da categoria. -->
         <select id="categorias">
           <option id="selecione" disabled selected>--selecione</option>
         </select>
 
         <fieldset>
+          <!-- Utilização de div para divisão dos campos relacionados à unidade de origem. -->
           <div class="origem">
+            <!-- Rótulo para o campo de seleção de unidade de origem.  -->
             <label for="origem">Unidade de origem:</label>
+            <!-- Campo de seleção da unidade de origem.  -->
             <select id="origem">
+              <!-- Opção inicial padrão para a seleção da unidade de origem. -->
               <option>--selecione</option>
             </select>
+            <!-- Rótulo para o campo de entrada de valor a ser convertido. -->
             <label for="valor">Valor a ser convertido:</label>
+            <!-- Campo de entrada numérico para o valor a ser convertido, com classe CSS "valorInicial" e atributo "required" para exigir preenchimento. -->
             <input class="valorInicial" type="number" id="valor" required />
           </div>
 
           <div>
+            <!-- Parágrafo exibindo o sinal de igual (=) para indicar a operação de conversão. -->
             <p class="sinalDeIgual">=</p>
           </div>
 
+          <!-- Divisão para os campos relacionados à unidade de destino. -->
           <div class="destino">
+            <!-- Rótulo para o campo de seleção de unidade de destino. -->
             <label for="destino">Unidade de destino:</label>
+            <!-- Campo de seleção da unidade de destino. -->
             <select id="destino">
+              <!-- Opção inicial padrão para a seleção da unidade de destino. -->
               <option>--selecione</option>
             </select>
+            <!-- Rótulo para a área de texto que exibe o valor convertido. -->
             <label for="resultadoConversao">Valor convertido:</label>
+            <!-- Área de texto desabilitada que exibe o valor convertido. -->
             <textarea type="text" id="resultadoConversao" disabled></textarea>
           </div>
         </fieldset>
+        <!-- Botão de conversão com classe CSS "botao" e id "botao". -->
         <button class="botao" id="botao">Converter</button>
       </form>
     </main>
 
+    <!-- Define o rodapé da página. Parágrafo exibindo a informação do projeto e do autor.  -->
     <footer>
       <p>Projeto realizado por Yohan Barboza.</p>
     </footer>
+
+    <!-- Importa o arquivo JavaScript externo "script.js" para adicionar interatividade à página. -->
     <script src="script.js"></script>
   </body>
 </html>
