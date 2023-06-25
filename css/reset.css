@@ -16,8 +16,8 @@
 
 /* Estilização do corpo do documento */
 body {
-  background: var(--base);
-  background-image: url(../img/background.jpg);
+  /* background: var(--base); */
+  background-image: url(./../img/background.jpg);
   background-size: cover;
   background-position: center;
   width: 100%;
