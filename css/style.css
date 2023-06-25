@@ -5,6 +5,7 @@
 .cabecalho{
   display: flex;
   margin: 10px;
+  margin-top: 20px;
 }
 
 /* Estilização do título principal */
@@ -28,6 +29,7 @@
   inset 1px 1px 4px 0 rgba(0, 0, 0, .4);
   border-top: 1px solid rgba(255, 255, 255, 0.274);
   border-left: 1px solid rgba(255, 255, 255, 0.267);
+  backdrop-filter: blur(10px);
 }
 
 /* Estilização do campo de seleção de categoria */
