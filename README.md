@@ -31,6 +31,3 @@ Um conversor de unidades implementado em JavaScript, que permite converter valor
 
 - `style.css`: O arquivo CSS que define o estilo visual da página.
 
-## Contribuição
-
-Contribuições são bem-vindas! Se você tiver alguma ideia de melhoria ou correção de bug, sinta-se à vontade para abrir uma issue ou enviar um pull request.
