@@ -193,8 +193,8 @@ function converter(event){
   // Essa linha obtém o valor numérico inserido no elemento com o id 'valor' e o converte para um número inteiro utilizando a função parseInt(). O valor é armazenado na variável valor.
   var valor = parseInt(document.getElementById('valor').value)
 
-  //Essa linha verifica se o valor que estamos recebendo é realmente um number, com a logica de que qualquer coisa diferente de number ele retorna um alert.
-  if (!valor) {
+  //Esse código é uma validação para verificar se o valor de uma variável chamada valor é null, undefined ou NaN.Se qualquer uma dessas condições for verdadeira o código dentro do bloco do if será executado.
+  if (valor === null || valor === undefined || isNaN(valor)) {
     alert("Preencha o campo 'Valor' antes de converter.");
     return;
   }
